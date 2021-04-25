@@ -649,6 +649,7 @@ class UserRepository with ChangeNotifier {
   Future logOut() async {
     _auth.signOut();
     _state = Authentication.Unauthenticated;
+    _avatar = null;
     notifyListeners();
     return Future.delayed(Duration.zero);
   }
