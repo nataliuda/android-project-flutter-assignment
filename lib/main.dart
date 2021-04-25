@@ -117,12 +117,12 @@ class _RandomWordsState extends State<RandomWords> {
                           null,
                           child: Center(
                             child:
-                            user.avatar == null ?
+                            user._avatar == null ?
                             Icon(
                               Icons.person,
                               size: 50,
                             )
-                                : Image.network(user.avatar, fit: BoxFit.fitHeight),
+                                : Image.network(user._avatar, fit: BoxFit.fitHeight),
                           ),
                           borderColor: Colors.transparent,
                           borderWidth: 2,
@@ -592,7 +592,6 @@ class UserRepository with ChangeNotifier {
 
   Authentication get state => _state;
   User get user => _user;
-  String get avatar => _avatar;
 
   Future <void> _addUser() async {
     final User user = _auth.currentUser;
